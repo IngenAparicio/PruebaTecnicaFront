@@ -1,0 +1,59 @@
+<form class="matero-form-horizontal" [formGroup]="formFormulario" (ngSubmit)="crearFormulario()">
+
+    <div class="modal-content border-radius-overflow">
+        <div class="toolbar modal-header py-3 justify-content-center" role="banner">
+            <span>Formulario Usuarios</span>
+            <div class="spacer"></div>
+        </div>
+        <div class="modal-body" style="margin-top: 10%;">
+            <div class="row card-body">
+
+                <div class="col-md-6 col-lg-6">
+                    <div class="col-md-12 col-lg-12">
+                        <label> Usuario </label>
+                    </div>
+                    <div class="col-md-12 col-lg-12">
+                        <mat-form-field class="no-border">
+                            <input matInput type="text" formControlName="usuarioPlat">
+                        </mat-form-field>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-6">
+                    <div class="col-md-12 col-lg-12">
+                        <label> Contraseña </label>
+                    </div>
+                    <div class="col-md-12 col-lg-12">
+                        <mat-form-field class="no-border">
+                            <input matInput type="text" formControlName="pass">
+                        </mat-form-field>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-6">
+                    <div class="col-md-12 col-lg-12">
+                        <label class="etiqueta"><span class="color-g">Fecha de Creación</span></label>
+                    </div>
+                    <div class="col-md-12 col-lg-12">
+                        <mat-form-field class="no-border">
+                            <input matInput type="date" [matDatepicker]="picker" formControlName="fechaCreacion" />
+                            <mat-datepicker #picker></mat-datepicker>                            
+                        </mat-form-field>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="text-center my-4">
+            <button class="btn btn-sm btn-success">
+                Guardar
+            </button>
+            <button type="button" class="btn btn-sm btn-danger" (click)="cerrar()"
+                style="margin-left: 10px !important;">
+                Cancelar
+            </button>
+        </div>
+    </div>
+
+</form>
